@@ -1,1 +1,116 @@
-<p>hi</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
+<meta name="description" content="Learn Java with Rick Delpo">
+
+<meta name="keywords" content="Learn Java with Rick Delpo, how to learn java,learn java">
+
+    <title>Learn Java in 2021 and MORE with Rick Delpo</title>
+
+<script>
+                 //get jsonp geo vars
+             var country,city;
+             //var newvar;
+             var ip_address;
+
+        function myCallback(dataWeGotViaJsonp){
+            country = dataWeGotViaJsonp.country_name;
+            city =dataWeGotViaJsonp.city;
+            ip_address = dataWeGotViaJsonp.ip;
+                      
+        }
+        </script> 
+              <script type="text/javascript" src="https://freegeoip.app/json?callback=myCallback">
+                  //append ?callback here
+</script>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>    
+
+<p>
+Learn Java, why do we want to do this in 2021                               by Rick Delpo      11-26-21
+</p>
+<p>
+Learn Java because we appear more sophisticated
+</p>
+<p>
+Learn Java because there is money to be made
+</p>
+<p>
+Learn Java and have it in your tool box
+</p>
+<p>
+Learn Java because other languages use similar syntax
+</p>
+<p>
+Learn Java to become more well rounded
+</p>
+<p>
+Become Full Stack by Learning Java along with SQL and Javascript
+</p>
+<p>
+My old school java tutorials can be found <a href="https://howtolearnjava.com"> here.</a>
+</p>
+<p>
+Note a couple of things. I am instructing all on a Windows platform. U will be redirected to our <a href="https://javasqlweb.org"> parent site </a> for now because this site is still under construction
+</p>
+<p>
+Also using only Eclipse as my IDE and u, the beginner, should move on to Eclipse with Maven quickly because most of the tutorials out there are in Maven. 
+</p>
+<p>
+Also, I am providing ONLY the very basics and it is up to u to keep the research going at ur own pace. My java tutorials are only a small piece of the puzzle.
+</p>
+<p>
+So by all means, please do Learn Java, u will not regret it.
+</p>
+<p>
+Happy Coding !!
+</p>
+
+</body>   
+
+<script>
+var pg_name="github;
+   //set vars..also do when user presses menu item capture page_name and pass to lambda
+var session = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+var date = new Date().toLocaleDateString();
+var hit1 = "7";  //in tracker db hit is a string..i think all fields are strings in tracker db
+            //for new db we can keep this constant so we can sort the db by hit to get most recent hits ie hit=3 not 1
+                     // 4 is for plain vanilla and 3 is from react experiment..now putting date into this var
+var now = new Date().toLocaleTimeString();
+var out = new Date().toLocaleTimeString();
+
+passVars();  //run passVars here, then on each pg click run passVars again to capture pg name
+
+  function passVars() {
+
+   //then pass 5 objects... ses, hit2 etc to lambda and call event.ses inside lambda..note, must be called article
+const article = { ses: session, city2: city, hit2: date, date2:pg_name, ip2:ip_address,country2:country, time2:now, time3:out };
+    axios
+           .post("https://d38pchcrt4.execute-api.us-east-2.amazonaws.com/default/lodash2",article)
+    //.post("https://0qnqrba6hi.execute-api.us-east-2.amazonaws.com/prod/saveS3",article)
+      //.post("https://diprtw71se.execute-api.us-east-2.amazonaws.com/prod/contacts",article)
+
+//need to replace saveS3 with lodash2 for test...also pass real vars to lodash 2 instead of mock data
+//API endpoint: https://d38pchcrt4.execute-api.us-east-2.amazonaws.com/default/lodash2
+        
+      .then(res => {
+        //console.log(res.data);
+      });
+   //note, this axios runs on page load to do time in on db...all other axios on this page by button press only
+         //this axios post should not run again on back press or when menu items are pressed
+
+//this axios is for user time in....see onpopstate for time out
+}
+
+
+</script>
+
+
+</html> 
